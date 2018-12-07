@@ -31,7 +31,8 @@ MODEL_DIR = os.path.join(ROOT_DIR, "logs")
 # Path to trained weights file
 # Download this file and place in the root of your 
 # project (See README file for details)
-LIP_MODEL_PATH = '/home/ltp/WorkShop/Human_Parsing/Resnet101_FCN/logs/AttResnet101FCN/TiTan_finetune/6gpus/AttResnet101FCN_finetune40.h5'
+LIP_MODEL_PATH = 'AttResnet101FCN_lip_0023.h5' # 'att_pspnet.h5'
+#'/home/ltp/WorkShop/Human_Parsing/Resnet101_FCN/logs/AttResnet101FCN/TiTan_finetune/6gpus/AttResnet101FCN_finetune40.h5'
 # Directory of images to run detection on
 #IMAGE_DIR =os.path.join(ROOT_DIR, "images")
 IMAGE_DIR= '/home/ltp/图片/smplayer_screenshots/crop'
