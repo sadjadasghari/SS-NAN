@@ -916,7 +916,7 @@ class Resnet101FCN():
         exlude: list of layer names to excluce
         """
         import h5py
-        from keras.engine import topology
+        from keras.engine import saving # changed from topology to saving, based on: https://github.com/matterport/Mask_RCNN/issues/694
 
         if exclude:
             by_name = True
@@ -940,7 +940,7 @@ class Resnet101FCN():
         if by_name:
             models = filter(lambda l: l.__class__.__name__ =='Model', layers)
             players = filter(lambda l: l.__class__.__name__ !='Model', layers)
-            topology.load_weights_from_hdf5_group_by_name(f, players)
+            saving.load_weights_from_hdf5_group_by_name(f, players)
             for v in models:
                 weights=[]
                 for j in v.weights:
@@ -950,7 +950,7 @@ class Resnet101FCN():
                         print(j.name+' not found !\n') 
                 K.batch_set_value(weights)
         else:
-            topology.load_weights_from_hdf5_group(f, layers)
+            saving.load_weights_from_hdf5_group(f, layers)
         if hasattr(f, 'close'):
             f.close()
 
