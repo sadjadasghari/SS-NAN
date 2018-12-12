@@ -30,8 +30,8 @@ MODEL_DIR = os.path.join(ROOT_DIR, "logs")
 
 # Path to trained weights file
 # Download this file and place in the root of your 
-# project (See README file for details)
-LIP_MODEL_PATH = 'AttResnet101FCN_lip_0023.h5' # 'att_pspnet.h5'
+# project (See README file for details) /home/sadjad/workspace/SS-NAN/logs/AttResnet101FCN/lip20181207T1059
+LIP_MODEL_PATH = 'logs/AttResnet101FCN/lip20181207T1059/AttResnet101FCN_lip_0030.h5' # 'AttResnet101FCN_lip_0023.h5' # 'att_pspnet.h5'
 #'/home/ltp/WorkShop/Human_Parsing/Resnet101_FCN/logs/AttResnet101FCN/TiTan_finetune/6gpus/AttResnet101FCN_finetune40.h5'
 # Directory of images to run detection on
 #IMAGE_DIR =os.path.join(ROOT_DIR, "images")
@@ -113,7 +113,7 @@ class_names = ['BG','Hat', 'Hair','Glove', 'Sunglasses', 'Upper-clothes', 'Dress
     #skimage.io.imsave('/home/ltp/图片/smplayer_screenshots/crop/I2/'+v,im)
 # Load a random image from the images folderim,ax =plt.subplots(1,figsize = (16,16))
 IMAGE_DIR =train_dir#'./images/'
-file_names ='3837_445836.jpg'#next(os.walk(IMAGE_DIR))[2]
+file_names ='0000030.jpg'#next(os.walk(IMAGE_DIR))[2]
 random.seed(120)
 image = skimage.io.imread(IMAGE_DIR+file_names)
 

@@ -42,7 +42,7 @@ class LIPConfig(Config):
 
     # Uncomment to train on 8 GPUs (default is 1)
     GPU_COUNT = 1
-    NUM_CLASSES = 1 + 19 # COCO has 80 classes
+    NUM_CLASSES = 1 + 4 # 19 # COCO has 80 classes
 
 
 ############################################################
@@ -264,13 +264,14 @@ if __name__ == '__main__':
         print("Training network 5+")
         model.train(dataset_train, dataset_val,
                     learning_rate=config.LEARNING_RATE,
-                    epochs=30,layers='head')
+                    #epochs=40, layers='all')
+		    epochs=30,layers='head')
         config.BATCH_SIZE=10*config.GPU_COUNT
-        config.STEPS_PER_EPOCH =round(len(dataset_train.image_info)/config.BATCH_SIZE)
-        config.VALIDATION_STPES=round(config.STEPS_PER_EPOCH/10)
-        model.train(dataset_train, dataset_val,
-                    learning_rate=config.LEARNING_RATE,
-                    epochs=40,layers='psp5+')
+        # config.STEPS_PER_EPOCH =round(len(dataset_train.image_info)/config.BATCH_SIZE)
+        # config.VALIDATION_STPES=round(config.STEPS_PER_EPOCH/10)
+        # model.train(dataset_train, dataset_val,
+        #             learning_rate=config.LEARNING_RATE,
+        #             epochs=40,layers='psp5+')
 #'''Need to rewrite'''     
 
     elif args.command == "evaluate":
