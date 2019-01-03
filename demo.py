@@ -113,7 +113,7 @@ class_names = ['BG','Hat', 'Hair','Glove', 'Sunglasses', 'Upper-clothes', 'Dress
     #skimage.io.imsave('/home/ltp/图片/smplayer_screenshots/crop/I2/'+v,im)
 # Load a random image from the images folderim,ax =plt.subplots(1,figsize = (16,16))
 IMAGE_DIR =train_dir#'./images/'
-file_names ='0000030.jpg'#next(os.walk(IMAGE_DIR))[2]
+file_names ='hard-hat.jpg' # '0000030.jpg'#next(os.walk(IMAGE_DIR))[2]
 random.seed(120)
 image = skimage.io.imread(IMAGE_DIR+file_names)
 
